@@ -1,0 +1,110 @@
+ :root {
+            --primary-color: #8527c3fd;
+            --primary-soft: #8527c383;
+            --white-color: #fff;
+            --header-height: 80px;
+            --padding-horizontal: 2rem;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #333;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .header {
+            height: var(--header-height);
+            background-color: var(--primary-color);
+        }
+
+        .navbar {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--padding-horizontal);
+        }
+
+        .hamburger-menu {
+            display: none;
+        }
+
+        .hamburger-menu:checked + .nav-links {
+            height: calc(40vh - var(--header-height));
+        }
+
+        .logo {
+            color: var(--white-color);
+        }
+
+        .hamburger-label {
+            cursor: pointer;
+        }
+
+        .menu-icon {
+            color: var(--white-color);
+            width: 35px;
+            height: 35px;
+        }
+
+        .nav-links {
+            width: 100%;
+            background-color: var(--primary-soft);
+            position: absolute;
+            top: var(--header-height);
+            left: 0;
+            height: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            transition: all 0.3s;
+        }
+
+        .nav-link {
+            font-size: 1rem;
+            color: var(--white-color);
+            font-weight: bold;
+        }
+
+        @media (min-width: 768px) {
+            .hamburger-label {
+                display: none;
+            }
+
+            .nav-links {
+                position: static;
+                width: auto;
+                height: auto;
+                flex-direction: row;
+                gap: 2rem;
+                background-color: transparent;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+                transition: all 0.3s;
+                padding: 0.2rem 0.7rem;
+                border-radius: 4px;
+            }
+
+            .nav-link:hover {
+                background-color: #5f1192;
+            }
+        }
